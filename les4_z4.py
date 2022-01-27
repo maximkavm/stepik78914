@@ -15,3 +15,14 @@
 # 1 3
 
 N = int(input())
+m = [int(i) for i in input().split()]
+
+maxelm = m[N-1]
+for j in range(0, N):
+    for i in range(0, N - j - 1):
+        if m[i]> m[N - j - 1]:
+            m[i], m[N - j - 1] = m[N - j - 1], m[i]
+
+
+print(*m)
+
