@@ -5,10 +5,19 @@
 # Выходные данные
 # Вывести получившийся массив.
 # Sample Input:
-#
 # 5
 # 1 2 3 4 5
 # 2 3
 # Sample Output:
-#
 # 1 2 2 3 4 5
+
+N = int(input())
+m = [int(i) for i in input().split()]
+m.append(m[N - 1])
+a, b = map(int, input().split())
+i = N - 1
+while i > b - 1 and i > 0:
+    m[i] = m[i - 1]
+    i -= 1
+m[b - 1] = a
+print(*m)
