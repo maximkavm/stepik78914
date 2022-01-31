@@ -19,8 +19,9 @@ N = int(input())
 m = [int(i) for i in input().split()]
 
 def insertn(N, P, mas):
-    mas.append(mas[N - 1])
-    i = N - 1
+    L = len(mas)
+    mas.append(mas[L - 1])
+    i = L - 1
     while i > P - 1 and i > 0:
         mas[i] = mas[i - 1]
         i -= 1
@@ -28,5 +29,5 @@ def insertn(N, P, mas):
     return m
 
 
-insertn(2,3,m)
+insertn(2, 3, m)
 print(*m)
